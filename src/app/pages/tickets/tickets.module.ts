@@ -10,13 +10,17 @@ import {MenubarModule} from 'primeng/menubar'
 import { TicketCardComponent } from './ticket-card/ticket-card.component';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
+import { SettingsComponent } from './settings/settings.component';
+import { TicketInfoComponent } from './ticket-info/ticket-info.component';
 @NgModule({
   declarations: [
     TicketsListComponent,
     TicketsComponent,
     TicketsHeaderComponent,
     TicketsAsideComponent,
-    TicketCardComponent
+    TicketCardComponent,
+    SettingsComponent,
+    TicketInfoComponent
   ],
   imports: [
     TicketsRoutingModule,

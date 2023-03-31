@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TicketsComponent } from './tickets.component';
 import { TicketsListComponent } from './tickets-list/tickets-list.component';
+import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
   { path: '', component: TicketsComponent,
@@ -9,6 +10,12 @@ const routes: Routes = [
     {
       path:'list',
       component:TicketsListComponent
+  //       loadChildren: ()  => import('./tickets-list/tickets-list.module')
+  // .then(m => m.TicketsListModule)
+    },
+    {
+      path:'settings',
+      component:SettingsComponent
   //       loadChildren: ()  => import('./tickets-list/tickets-list.module')
   // .then(m => m.TicketsListModule)
     }

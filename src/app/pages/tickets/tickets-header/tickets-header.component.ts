@@ -38,6 +38,8 @@ this.currentDate = new Date()
       {
         label: 'Settings',
         icon: 'pi pi-fw pi-settings',
+        routerLink:'settings'
+
       },
     ]
   }

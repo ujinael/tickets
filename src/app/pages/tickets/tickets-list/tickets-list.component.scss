@@ -5,3 +5,15 @@
 gap:1rem;
 min-height: 0;
 }
+.info_bar{
+    display: inline-flex;
+    gap: 1rem;
+    align-items: center;
+    align-content: center;
+}
+label{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: .5em;
+}
