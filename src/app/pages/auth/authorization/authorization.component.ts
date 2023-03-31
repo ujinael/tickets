@@ -28,11 +28,12 @@ export class AuthorizationComponent implements OnInit {
 
   ngOnInit(): void {
     localStorage.removeItem('currentUser')
+    localStorage.removeItem('cardNumber')
   }
 
   onSubmit(event: Event) {
     try {
-      this.service.signIn(this.login, this.password);
+      this.service.signIn(this.login, this.password,this.loyalityCardNumber);
       this.messageService.add({
         closable: true,
         severity:'succes',

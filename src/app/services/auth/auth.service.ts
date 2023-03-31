@@ -12,11 +12,11 @@ usersStorage:Array<User> = []
   constructor(
     private readonly userService:UserService
   ) { }
-  signIn(login:string,password:string){
+  signIn(login:string,password:string,loylityCardNumber:string){
     try {
       const user = this.getUserBy(login)
 if(user.password !== password) throw Error("Wrong password")
-
+localStorage.setItem('cardNumber',loylityCardNumber)
 this.userService.setUser(user)
     } catch (error) {
       throw Error((<Error>error).message)
