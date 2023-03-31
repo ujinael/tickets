@@ -1,0 +1,18 @@
+
+.tickets_header{
+    display: flex;
+    width: 100%;
+    min-width: none;
+    align-items: center;
+    background-color: lightgray;
+    color:#ffffff;
+    gap: 1rem;
+    padding:0 0.5em;
+}
+.user_name {
+}
+.timer{
+    flex:1 1 300px;
+    text-align: right;
+
+}

@@ -1,3 +1,42 @@
-<input type="text"
-       pInputText
-       [(ngModel)]="property"/>
+<form (ngSubmit)="onSubmit($event)" class="form">
+  {{ childProp }}
+  <label for="login"
+    >Login
+    <input id="login"
+    [ngClass]="{'input-error':!login}"
+    type="text"
+     name="login" pInputText [(ngModel)]="login" />
+  </label>
+  <label for="password"
+    >Password
+    <input
+    [ngClass]="{'input-error':!password}"
+      id="password"
+      type="password"
+      name="password"
+      pInputText
+      [(ngModel)]="password"
+    />
+  </label>
+  <label for="selectedValue">
+    Карта лояльности
+    <p-checkbox
+      id="selectedValue"
+      name="groupname"
+      [binary]="true"
+      [(ngModel)]="vipStatus"
+    ></p-checkbox>
+  </label>
+  <label *ngIf="vipStatus" for="loyalitycard"
+  >LoyalityCard
+  <input
+    id="loyalitycard"
+    type="text"
+    name="loyalitycard"
+    pInputText
+    [(ngModel)]="loyalityCardNumber"
+  />
+</label>
+  <button [disabled]="submitButtonDisabled()" class="btn" type="submit">Sign In</button>
+</form>
+<style lang="scss"></style>

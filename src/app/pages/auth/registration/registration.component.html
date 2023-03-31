@@ -1,0 +1,45 @@
+<form (submit)="onSubmit($event)" class="form">
+<label for="user_login">Login:
+<input id="user_login"
+[ngClass]="{'input-error':!user.login}"
+type="text"
+name="login"
+       pInputText
+       [(ngModel)]="user.login">
+    </label>
+    <label for="user_password">Password:
+<input id="user_password"
+[ngClass]="{'input-error':!user.password}"
+type="password"
+name="password"
+pInputText
+[(ngModel)]="user.password"
+>
+</label>
+<label for="confirm_password">Confirm password:
+<input  id="confirm_password"
+[ngClass]="{'input-error':!passwordEqualConfirm()}"
+type="password"
+name="confirmPassword"
+pInputText
+[(ngModel)]="confirmPassword"
+>
+</label>
+<label for="email">Email:
+<input  id="email" 
+[ngClass]="{'input-error':!user.email}"
+type="email"
+name="email"
+pInputText
+[(ngModel)]="user.email"
+></label>
+
+<label for="loyality_card">Loyality Card:
+    <input  id="loyality_card" 
+    type="text"
+    name="loyalityCardNumber"
+    pInputText
+    [(ngModel)]="user.loyalityCardNumber"
+    ></label>
+<button [disabled]="submitButtonDisabled()" type="submit" class="btn">SignUp</button>
+</form>

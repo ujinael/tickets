@@ -1,0 +1,21 @@
+.form{
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap:1em;
+}
+label{
+    display: flex;
+    flex-direction: column;
+}
+.btn{
+display: inline-block;
+border: 2px solid lightskyblue;
+background: lightskyblue;
+color: #ffffff;
+font-size: 1rem;
+padding: .5em 1em;
+border-radius: 4px;
+box-shadow: 2px 2px 4px lightgray;
+cursor: pointer;
+}

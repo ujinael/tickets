@@ -1,0 +1,9 @@
+<div class="tickets_layout">
+<app-tickets-header [shortMenu]="shortMenu" class="header">
+
+</app-tickets-header>
+<main class="tickets_main">
+<router-outlet></router-outlet>
+</main>
+<app-tickets-aside (updateSelectedMenuType)="onChangeMenuStatus($event)" class="aside"></app-tickets-aside>
+</div>
