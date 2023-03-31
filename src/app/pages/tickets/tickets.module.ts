@@ -1,3 +1,4 @@
+import { InputTextModule } from 'primeng/inputtext';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TicketsComponent } from './tickets.component';
@@ -8,6 +9,7 @@ import { TicketsAsideComponent } from './tickets-aside/tickets-aside.component';
 import {MenubarModule} from 'primeng/menubar'
 import { TicketCardComponent } from './ticket-card/ticket-card.component';
 import { DropdownModule } from 'primeng/dropdown';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     TicketsListComponent,
@@ -20,7 +22,10 @@ import { DropdownModule } from 'primeng/dropdown';
     TicketsRoutingModule,
     CommonModule,
     MenubarModule,
-    DropdownModule
+    DropdownModule,
+    FormsModule,
+    InputTextModule
+
   ]
 })
 export class TicketsModule { }

@@ -9,6 +9,7 @@ import { Tour } from '../entities';
 })
 export class TicketsListComponent implements OnInit {
 tours:Array<Tour>
+searchString:string
   constructor(private readonly ticketService:TiсketsStorageService) {
 
    }
@@ -19,6 +20,13 @@ tours:Array<Tour>
       
       this.tours = tours
     })
+  }
+  onInput(event:any){
+// this.searchString = event.value
+  }
+  getFilteredTours(){
+    if(!this.searchString)return this.tours
+  return this.tours.filter(tour=>tour.name.includes(this.searchString))
   }
 
 }

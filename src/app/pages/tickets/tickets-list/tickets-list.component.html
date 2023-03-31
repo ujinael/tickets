@@ -1,6 +1,14 @@
+<label for="search"  class="w-30 mx-3 mt-3">
+    <input 
+    (input)="onInput($event)"
+    id="search"
+   name="search"
+   [(ngModel)] ="searchString"
+    pInputText
+     placeholder="поиск"></label>
 <ul class="tickets_list p-3">
-    
-<li *ngFor="let ticket of tours">
+
+<li *ngFor="let ticket of getFilteredTours()">
 <app-ticket-card [tour]="ticket"></app-ticket-card>
 
 
