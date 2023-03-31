@@ -6,7 +6,7 @@
     position: relative;
     grid-auto-flow: column;
     grid-template-columns: min-content 1fr;
-    grid-template-rows: min-content 1fr;
+    grid-template-rows: min-content 1fr min-content;
 }
 .header{
     grid-area: 1/1/2/3;  
@@ -16,12 +16,16 @@
     top: 0;
     left: 0;
 }
-.aside{
-  
+
+.footer{
+  grid-area: 3/1/4/3;
+  background-color: grey;
 }
 .aside>*{
     padding: .25em;
 }
 .tickets_main{
     grid-area: 2/2/3/3;
+    min-height: 0;
+    overflow: scroll;
 }

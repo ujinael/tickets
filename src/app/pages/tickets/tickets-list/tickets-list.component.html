@@ -1,4 +1,4 @@
-
+<div *ngIf="tours.length" class="tours">
 <div class="info_bar">
 <label for="search"  class="w-30 mx-3 mt-3">
     Поиск
@@ -10,17 +10,26 @@
     pInputText
      placeholder="поиск"></label>
 
-<label class="w-30 mx-3 mt-3">Количество туров: {{getFilteredTours()?.length}}</label>
-<label class="w-30 mx-3 mt-3">Количество туров: {{getFilteredTours()?.length}}</label>
+<label class="w-30 mx-3 mt-3">Количество туров: {{getFilteredTours().length}}</label>
+<label   class="w-30 mx-3 mt-3">Выбранный тур: {{blockDirective.activeElementIndex+1}}</label>
 
 </div>
 
-<ul class="tickets_list p-3">
+<ul class="tickets_list p-3"
+appBlocksStyle
+       appBlocksStyle
+       #toursWrap
+       #blockDirective='blocksStyle'
+       [selector]="'.tour'"
+       [initFirst]="false"
+       (renderComplete)="directiveRenderComplete($event)"
+       >
 
-<li *ngFor="let ticket of getFilteredTours()">
-<app-ticket-card [tour]="ticket"></app-ticket-card>
+<li class="tour" (dblclick)="onDbClick(ticket)" *ngFor="let ticket of getFilteredTours()">
+<app-ticket-card  [tour]="ticket"></app-ticket-card>
 
 
 </li>
 
 </ul>
+</div>

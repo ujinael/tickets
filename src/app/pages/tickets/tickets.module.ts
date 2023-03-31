@@ -1,3 +1,4 @@
+import { BlocksStyleDirective } from './../../directive/block-style.directive';
 import { InputTextModule } from 'primeng/inputtext';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -12,6 +13,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
 import { SettingsComponent } from './settings/settings.component';
 import { TicketInfoComponent } from './ticket-info/ticket-info.component';
+
 @NgModule({
   declarations: [
     TicketsListComponent,
@@ -20,7 +22,8 @@ import { TicketInfoComponent } from './ticket-info/ticket-info.component';
     TicketsAsideComponent,
     TicketCardComponent,
     SettingsComponent,
-    TicketInfoComponent
+    TicketInfoComponent,
+    BlocksStyleDirective
   ],
   imports: [
     TicketsRoutingModule,
