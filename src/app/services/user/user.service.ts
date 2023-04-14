@@ -7,8 +7,9 @@ import { User } from '../../pages/auth/entities/users.entity'
 })
 export class UserService {
   private user?: User;
- 
-  constructor(private readonly router:Router) { }
+ #token?:string
+  constructor(private readonly router:Router) {
+   }
    getUser(): User|undefined { 
     if(!this.user){
       try {
@@ -33,7 +34,22 @@ return
   };
   logout(){
     localStorage.removeItem('currentUser')
+    localStorage.removeItem('my_tickets_token')
+
     this.user = undefined
     this.router.navigate(['auth'])
+  }
+  getToken(){
+    if(this.#token)
+    return this.#token
+    else {
+      const token = localStorage.getItem('my_tickets_token')
+      if(token)return token
+      else return undefined
+    }
+  }
+  setToken(token:string){
+    this.#token = token
+    localStorage.setItem('my_tickets_token',token)
   }
 }

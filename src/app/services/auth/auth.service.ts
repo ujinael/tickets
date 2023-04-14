@@ -17,7 +17,9 @@ usersStorage:Array<User> = []
       const user = this.getUserBy(login)
 if(user.password !== password) throw Error("Wrong password")
 localStorage.setItem('cardNumber',loylityCardNumber)
+
 this.userService.setUser(user)
+this.userService.setToken(`my_token:${new Date().toISOString()}`)
     } catch (error) {
       throw Error((<Error>error).message)
     }
