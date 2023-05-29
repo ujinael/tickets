@@ -1,8 +1,37 @@
 <aside class="tickets_aside">
-  <p-dropdown
-    [options]="menuTypes"
-    (onChange)="onChangeSelectedMenuType($event) "
-    optionLabel="label"
-  ></p-dropdown>
+  <p-toast [position]="'top-right'"></p-toast>
+  <div class="mt-3">
+    <p-calendar (onSelect)="selectDate($event)"></p-calendar>
+  </div>
+  <div class="mt-3">
+    <p-dropdown
+      class="mt-3"
+      [styleClass]="'w-100'"
+      [options]="menuTypes"
+      (onChange)="onChangeSelectedMenuType($event)"
+      optionLabel="label"
+    ></p-dropdown>
+  </div>
+
+  <div class="mt-3 d-flex">
+    <p-dropdown
+      class="mt-3"
+      [styleClass]="'w-100'"
+      [options]="tourTypes"
+      optionLabel="label"
+      (onChange)="changeTourType($event)"
+    >
+    </p-dropdown>
+  </div>
+  <div class="mt-3">
+    <button class="btn btn-primary" (click)="initRestError()">
+      Получить ошибку
+    </button>
+  </div>
+  <div class="mt-3">
+    <button pButton (click)="onInitTours()">Заполнить туры</button>
+  </div>
+  <div class="mt-3">
+    <button pButton (click)="onRemoveTours()">Удалить туры</button>
+  </div>
 </aside>
- 

@@ -21,20 +21,20 @@ return
       } catch (error) {
         
       }
-
-
     }
     return this.user
    // возвращается user
   };
   setUser(user: User) {
     this.user = user
+    console.log(user);
+    
     localStorage.setItem('currentUser',JSON.stringify(user))
     // записывается пользователь в this.user 
   };
   logout(){
     localStorage.removeItem('currentUser')
-    localStorage.removeItem('my_tickets_token')
+    localStorage.removeItem('access_token')
 
     this.user = undefined
     this.router.navigate(['auth'])
@@ -43,13 +43,13 @@ return
     if(this.#token)
     return this.#token
     else {
-      const token = localStorage.getItem('my_tickets_token')
+      const token = localStorage.getItem('access_token')
       if(token)return token
       else return undefined
     }
   }
   setToken(token:string){
     this.#token = token
-    localStorage.setItem('my_tickets_token',token)
+    localStorage.setItem('access_token',token)
   }
 }

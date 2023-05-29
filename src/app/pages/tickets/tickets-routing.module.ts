@@ -4,6 +4,7 @@ import { TicketsComponent } from './tickets.component';
 import { TicketsListComponent } from './tickets-list/tickets-list.component';
 import { SettingsComponent } from './settings/settings.component';
 import { TicketInfoComponent } from './ticket-info/ticket-info.component';
+import { OrdersComponent } from './orders/orders.component';
 
 const routes: Routes = [
   { path: '', component: TicketsComponent,
@@ -11,6 +12,12 @@ const routes: Routes = [
     {
       path:'list',
       component:TicketsListComponent
+  //       loadChildren: ()  => import('./tickets-list/tickets-list.module')
+  // .then(m => m.TicketsListModule)
+    },
+    {
+      path:'orders',
+      component:OrdersComponent
   //       loadChildren: ()  => import('./tickets-list/tickets-list.module')
   // .then(m => m.TicketsListModule)
     },

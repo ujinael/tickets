@@ -36,6 +36,12 @@ this.currentDate = new Date()
         routerLink:'list'
       },
       {
+        label: 'Orders',
+        icon: 'pi pi-fw pi-list',
+        routerLink:'orders'
+
+      },
+      {
         label: 'Settings',
         icon: 'pi pi-fw pi-settings',
         routerLink:'settings'

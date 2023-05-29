@@ -1,0 +1,22 @@
+<div>
+    <h1>
+      Мои заказы
+    </h1>
+    <p-table [value]="orderList" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Age</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-order>
+        <tr>
+          <td>{{ order.firstName }}</td>
+          <td>{{ order.lastName }}</td>
+          <td>{{ order.age }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  

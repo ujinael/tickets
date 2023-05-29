@@ -9,12 +9,12 @@ export class InterceptorService implements HttpInterceptor{
 
   constructor(private readonly userService:UserService) { }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-  const hasToken = this.userService.getToken()
+    const hasToken = this.userService.getToken()
   if(hasToken){
      const authReq = req.clone({
-    headers: req.headers.set('Authorization', hasToken)
+    headers: req.headers.set('Authorization', `Bearer ${hasToken}`)
   });
-  authReq.headers.append('Authorization',`Bearer:${hasToken}`)
+  authReq.headers.append('Authorization',`Bearer ${hasToken}`)
       return next.handle(authReq)
 
   }

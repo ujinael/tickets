@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { AuthService } from '../../../services/auth/auth.service';
 import { MessageService } from 'primeng/api';
+import { ServerError } from 'src/app/entities/server.entity';
 
 @Component({
   selector: 'app-authorization',
@@ -31,9 +32,9 @@ export class AuthorizationComponent implements OnInit {
     localStorage.removeItem('cardNumber')
   }
 
-  onSubmit(event: Event) {
+ async onSubmit(event: Event) {
     try {
-      this.service.signIn(this.login, this.password,this.loyalityCardNumber);
+     await this.service.signIn(this.login, this.password,this.loyalityCardNumber);
       this.messageService.add({
         closable: true,
         severity:'succes',
@@ -45,9 +46,10 @@ export class AuthorizationComponent implements OnInit {
         },1000)
     } catch (error) {
       this.messageService.add({
-        severity:'error',
+        severity:'warn',
         closable:true,
         summary:(<Error>error).message
+        
       })
       
     }

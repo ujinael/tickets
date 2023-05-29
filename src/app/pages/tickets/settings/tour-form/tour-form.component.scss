@@ -1,0 +1,9 @@
+.tour_form{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    &>label{
+        display: flex;
+        flex-direction: column;
+    }
+}

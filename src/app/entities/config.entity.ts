@@ -1,0 +1,6 @@
+export interface IConfig{
+serverProtocol:string
+baseIndexHref:string
+backendHost:string
+backendPort:number
+}

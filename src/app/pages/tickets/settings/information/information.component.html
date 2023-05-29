@@ -1,0 +1,11 @@
+<div class="user_info" *ngIf="user">
+  <div class="user_info">
+    Login: {{user.login}}
+  </div>
+  <div class="user_info">
+Email:{{user.email}}
+  </div>
+  <button pButton (click)="onInitTours()">Заполнить туры</button>
+  <button pButton (click)="onRemoveTours()">Удалить туры</button>
+
+</div>

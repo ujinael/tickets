@@ -5,7 +5,7 @@
     display: grid;
     position: relative;
     grid-auto-flow: column;
-    grid-template-columns: min-content 1fr;
+    grid-template-columns: 1fr min-content;
     grid-template-rows: min-content 1fr min-content;
 }
 .header{
@@ -25,7 +25,7 @@
     padding: .25em;
 }
 .tickets_main{
-    grid-area: 2/2/3/3;
+    grid-area: 2/1/3/2;
     min-height: 0;
     overflow: scroll;
 }

@@ -7,7 +7,13 @@ import { IConfig } from 'src/app/entities/config.entity';
 })
 export class ConfigService {
 static config:IConfig
+
+
   constructor(private http: HttpClient) { }
+
+  getConfig(){
+    return ConfigService.config
+  }
   configLoad (): void {
     const jsonFile = `./assets/config/config.json`;
     this.http.get<IConfig>(jsonFile).subscribe((data) => {
@@ -36,7 +42,7 @@ static config:IConfig
         }
       }
       ).catch((response: any) => {
-        reject(`Ошибка при загрузки файла '${jsonFile}': ${JSON.stringify(response)}`);
+        reject(`Ошибка при загрузке файла '${jsonFile}': ${JSON.stringify(response)}`);
       });
     });
  

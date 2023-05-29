@@ -1,0 +1,62 @@
+<form (submit)="onSubmit($event)" class="tour_form" [formGroup]="tourForm">
+  <label for="name"
+    >Название тура
+    <input
+      type="text"
+      [ngClass]="{ 'input-error': !tourForm.value.name }"
+      pInputText
+      id="name"
+      formControlName="name"
+    />
+  </label>
+  <label for="description"
+    >Описание тура
+    <input
+      [ngClass]="{ 'input-error': !tourForm.value.description }"
+      type="text"
+      name="newPassword"
+      pInputText
+      id="description"
+      formControlName="description"
+    />
+  </label>
+  <label for="tourOperator"
+    >Туроператор
+    <input
+      [ngClass]="{ 'input-error': !tourForm.value.tourOperator }"
+      type="text"
+      name="confirmPassword"
+      pInputText
+      id="tourOperator"
+      formControlName="tourOperator"
+    />
+  </label>
+  <label for="price"
+    >Стоимость
+    <input
+      [ngClass]="{ 'input-error': !tourForm.value.price }"
+      type="text"
+      pInputText
+      id="price"
+      formControlName="price"
+    />
+  </label>
+  <label for="image"
+  >Картинка
+  <input
+    type='file'
+    pInputText
+    id="image"
+    formControlName="img"
+    (change)="selectFile($event)"
+  />
+</label>
+
+<div class="controls">
+      <button pButton [disabled]="tourForm.invalid"  type="submit" class="btn btn-primary">
+    Создать тур
+  </button>
+</div>
+
+</form>
+<p-toast></p-toast>

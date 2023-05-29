@@ -11,8 +11,6 @@ shortMenu:boolean = true
 
   constructor() { }
 onChangeMenuStatus(menuType:IMenuType){
-  console.log(menuType);
-
   this.shortMenu = menuType.type === 'custom'?true:false
 }
   ngOnInit(): void {

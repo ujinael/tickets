@@ -10,9 +10,22 @@ import { TicketsAsideComponent } from './tickets-aside/tickets-aside.component';
 import {MenubarModule} from 'primeng/menubar'
 import { TicketCardComponent } from './ticket-card/ticket-card.component';
 import { DropdownModule } from 'primeng/dropdown';
-import { FormsModule } from '@angular/forms';
+import {CalendarModule} from 'primeng/calendar'
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SettingsComponent } from './settings/settings.component';
 import { TicketInfoComponent } from './ticket-info/ticket-info.component';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
+import { TabViewModule } from 'primeng/tabview';
+import { CheckboxModule } from 'primeng/checkbox';
+import { PasswordChangeComponent } from './settings/password-change/password-change.component';
+import {PaginatorModule} from "primeng/paginator";
+import {CarouselModule} from "primeng/carousel";
+import { InformationComponent } from './settings/information/information.component';
+import { StatisticComponent } from './settings/statistic/statistic.component';
+import {TableModule} from "primeng/table";
+import { OrdersComponent } from './orders/orders.component';
+import { TourFormComponent } from './settings/tour-form/tour-form.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +36,12 @@ import { TicketInfoComponent } from './ticket-info/ticket-info.component';
     TicketCardComponent,
     SettingsComponent,
     TicketInfoComponent,
-    BlocksStyleDirective
+    BlocksStyleDirective,
+    PasswordChangeComponent,
+    InformationComponent,
+    StatisticComponent,
+    OrdersComponent,
+    TourFormComponent
   ],
   imports: [
     TicketsRoutingModule,
@@ -31,8 +49,18 @@ import { TicketInfoComponent } from './ticket-info/ticket-info.component';
     MenubarModule,
     DropdownModule,
     FormsModule,
-    InputTextModule
+    InputTextModule,
+    CalendarModule,
+    ToastModule,
+    TabViewModule,
+    CheckboxModule,
+    ReactiveFormsModule,
+    PaginatorModule,
+    CarouselModule,
+    TableModule,
 
-  ]
+  ],
+  providers:[MessageService]
+
 })
 export class TicketsModule { }

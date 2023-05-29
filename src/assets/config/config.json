@@ -1,0 +1,6 @@
+{
+    "serverProtocol": "http",
+    "baseIndexHref": "/",
+    "backendHost":"http://localhost",
+    "backendPort":4000
+     }  

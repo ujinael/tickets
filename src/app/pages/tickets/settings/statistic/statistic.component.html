@@ -1,0 +1,23 @@
+<div>
+  <h1>
+    Statistic
+  </h1>
+  <p-table [value]="usersStatistic" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>UserName</th>
+        <th>Quantity</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+      <tr>
+        <td>{{ user.company.name }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.website }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

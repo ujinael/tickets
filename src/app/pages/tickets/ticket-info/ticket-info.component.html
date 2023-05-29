@@ -1,1 +1,82 @@
-<p>ticket-info works!</p>
+<div class="container">
+<div class="ticket_card" *ngIf="currentTour">
+
+
+    <div class="ticket_card__header px-1">
+        <h5>
+            {{currentTour.name}}
+        </h5>
+    </div>
+    <div class="ticket_card__img">
+        <img src="./assets/images/{{currentTour.img}}" alt="">
+    </div>
+    <div class="ticket_card__description px-1">
+
+{{currentTour.description}}
+
+    </div>
+    <div class="ticket_card__price px-1">
+        {{currentTour.price}}
+    </div>
+</div>
+<form class="personal_form w-100" (submit)="onSubmit($event)" [formGroup]="userForm">
+<h3>Личная информация</h3>
+  <div class="d-flex w-100 gap-3">
+    <label class="label flex-grow-1" for="firstName">
+      Имя
+      <input
+        pInputText
+        [ngClass]="{'input-error':true}" id="firstName"
+      formControlName="firstName"
+      >
+    </label>
+    <label class="label flex-grow-1" for="lastName">
+      Фамилия
+      <input pInputText id="lastName"
+             formControlName="lastName"
+      >
+    </label>
+
+  </div>
+<div class="d-flex gap-3">
+
+  <label class="label flex-grow-1" for="age">
+    Возраст
+    <p-inputNumber [showButtons]="true" id="age" formControlName="age"
+    ></p-inputNumber>
+  </label>
+  <label class="label flex-grow-1" for="birth_date">
+    Дата рождения
+    <p-calendar  id="birth_date"
+           formControlName="birthDate"
+    ></p-calendar>
+  </label>
+</div>
+
+<label class="label" for="cardNumber">
+  Номер карты
+  <input pInputText id="cardNumber"
+         formControlName="cardNumber"
+  >
+</label>
+  <div><button class="btn btn-primary">Забронировать</button></div>
+
+
+</form>
+
+<div class="nearest_tours">
+  <h4>Похожие туры</h4>
+  <label class="label px-3">
+    поиск
+    <input placeholder="начать поиск" #ticketSearch [(ngModel)]="ticketSearchValue" type="text" pInputText />
+  </label>
+  <p-carousel [value]="nearestTours">
+<ng-template let-tour pTemplate="tour">
+  {{tour.name}}
+  <div class="ticket-img-nearest">
+    <img class="w-100 h-100" src="./assets/images/{{tour.img}}">
+  </div>
+</ng-template>
+  </p-carousel>
+</div>
+</div>

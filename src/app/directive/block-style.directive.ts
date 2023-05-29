@@ -33,7 +33,28 @@ export class BlocksStyleDirective {
     }
     setTimeout(() => {
       this.renderComplete.emit(true);
-    })
+    },200)
+  }
+  updateItems(): void {
+    console.log("Updated");
+
+    const newItems = this.el.nativeElement.querySelectorAll(this.selector);
+    this.items = this.el.nativeElement.querySelectorAll(this.selector);
+
+    if(Array.isArray(newItems) && newItems.length){
+          this.items = newItems
+
+          this.index = 0
+
+          if (this.items[0]) {
+            (this.items[0] as HTMLElement)
+            .classList.add('ng_selected')
+
+
+
+          }
+    }
+
   }
   initKeyUp(ev: KeyboardEvent): void{
     if (ev.key === 'ArrowRight' || ev.key === 'ArrowLeft' || ev.key === 'ArrowDown' || ev.key === 'ArrowUp') {
@@ -74,9 +95,13 @@ export class BlocksStyleDirective {
         .classList.add('ng_selected')
       }
     }
+    const rect = this.items[this.index].getBoundingClientRect()
+    window.scroll({top:rect.top})
     this.activeElementIndex = this.index
   }
   initStyle(index: number) {
+    this.index = index
+
     if (this.items[index]) {
       (this.items[index] as HTMLElement)
       .classList.add('ng_selected')
